@@ -5,7 +5,7 @@
 #include <ctime>
 #include <algorithm>  // Provides find_if() for searching vehicles.
 
-using namespace std;  // Allows use of cout, vector, string, etc. without std::
+using namespace std; 
 
 /*
     MODERN PARKING SYSTEM
@@ -74,7 +74,7 @@ public:
             }
             cout << '\n';
         }
-        cout << "=========================================\n";
+        cout << "\n";
     }
 
     // Find the first available slot.
@@ -93,16 +93,16 @@ public:
     void vehicleArrival() {
         string registrationNumber;
 
-        cout << "\n=========================================\n";
-        cout << "          VEHICLE ARRIVAL\n";
-        cout << "=========================================\n";
+        cout << "\n";
+        cout << "VEHICLE ARRIVAL\n";
+        cout << "\n";
         cout << "Enter vehicle registration number: ";
         cin >> registrationNumber;
 
         // Prevent the same vehicle from being registered twice.
         for (const auto& vehicle : parkedVehicles) {
             if (vehicle.registrationNumber == registrationNumber) {
-                cout << "\nThis vehicle is already parked.\n";
+                cout << "This vehicle is already parked.\n";
                 return;
             }
         }
@@ -156,9 +156,9 @@ public:
     void vehicleExit() {
         string registrationNumber;
 
-        cout << "\n=========================================\n";
-        cout << "            VEHICLE EXIT\n";
-        cout << "=========================================\n";
+        cout << "\n";
+        cout << "VEHICLE EXIT\n";
+        cout << "\n";
         cout << "Enter vehicle registration number: ";
         cin >> registrationNumber;
 
@@ -193,9 +193,9 @@ public:
         // Determine the amount to pay according to the parking tariff.
         double fee = calculateFee(minutesParked);
 
-        cout << "\n-----------------------------------------\n";
+        cout << "\n";
         cout << "           PARKING RECEIPT\n";
-        cout << "-----------------------------------------\n";
+        cout << "\n";
         cout << "Vehicle Registration : "
              << vehicle->registrationNumber << '\n';
         cout << "Parking Slot         : "
@@ -208,7 +208,7 @@ public:
              << hours << " hour(s) " << minutes << " minute(s)\n";
         cout << fixed << setprecision(2);
         cout << "Parking Fee          : Ksh " << fee << '\n';
-        cout << "-----------------------------------------\n";
+        cout << "\n";
 
         // Ask the driver for the amount of money they are paying.
         double payment;
@@ -237,19 +237,19 @@ public:
         // The record is no longer needed for vehicles currently inside.
         parkedVehicles.erase(vehicle);
 
-        cout << "\n=========================================\n";
+        cout << "\n";
         cout << "       PAYMENT SUCCESSFUL\n";
         cout << "       BARRIER: OPEN\n";
         cout << "       THANK YOU!\n";
-        cout << "=========================================\n";
+        cout << "\n";
     }
 
     // Display all vehicles currently inside the parking area.
     void displayParkedVehicles() const {
         // If the vector is empty, there are no vehicles currently parked.
-        cout << "\n=========================================\n";
+        cout << "\n";
         cout << "          PARKED VEHICLES\n";
-        cout << "=========================================\n";
+        cout << "\n";
 
         if (parkedVehicles.empty()) {
             cout << "There are currently no parked vehicles.\n";
@@ -261,7 +261,7 @@ public:
             cout << "Registration : " << vehicle.registrationNumber << '\n';
             cout << "Slot         : " << vehicle.slotNumber << '\n';
             cout << "Arrival      : " << ctime(&vehicle.arrivalTime);
-            cout << "-----------------------------------------\n";
+            cout << "\n";
         }
     }
 };
@@ -274,15 +274,15 @@ int main() {
 
     do {
         cout << "\n\n";
-        cout << "============================================\n";
+        cout << "\n";
         cout << "       MODERN PARKING SYSTEM - KENYA\n";
-        cout << "============================================\n";
+        cout << "\n";
         cout << "1. View Parking Slot Availability\n";
         cout << "2. Vehicle Arrival\n";
         cout << "3. Vehicle Exit\n";
         cout << "4. View Parked Vehicles\n";
         cout << "5. Exit System\n";
-        cout << "============================================\n";
+        cout << "\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
