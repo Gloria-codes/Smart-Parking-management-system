@@ -1,11 +1,3 @@
-/**
- * Multimedia University of Kenya (MMU)
- * Data Structures and Algorithm - Task One & System Development
- * Automated Parking Management System (Kenya Prototype)
- * 
- * Target Architecture: In-Memory DBMS Using Simple Structs
- * Deadline: Sunday 20/9/2026
- */
 
 #include <iostream>
 #include <string>
@@ -15,14 +7,13 @@
 
 using namespace std;
 
-// ==========================================
+
 //          CORE DATABASE STRUCTS
-// ==========================================
 
 // 1. Manages individual parking spaces and their real-time availability statuses
 struct ParkingSlot {
     int slotId;
-    string category;       // e.g., "Regular", "Disabled", "Electric"
+    string category;       // e.g., Regular,Disabled,Electric
     bool isAvailable;      // True if empty, False if occupied
 };
 
@@ -49,9 +40,9 @@ struct ParkingDatabase {
     vector<ParkingSession> sessionsTable;
 };
 
-// ==========================================
+
 //      DATABASE OPERATIONS & BUSINESS LOGIC
-// ==========================================
+
 
 /**
  * Pre-loads the specific operational rates requested by the MMU client brief.
@@ -80,9 +71,9 @@ void initializeDatabase(ParkingDatabase &db, int totalSlots) {
  */
 void displayAvailableSlots(const ParkingDatabase &db) {
     int availableCount = 0;
-    cout << "\n==========================================" << endl;
-    cout << "     LIVE PARKING DISPLAY PANEL (MMU)     " << endl;
-    cout << "==========================================" << endl;
+    cout << << endl;
+    cout << "LIVE PARKING DISPLAY PANEL      " << endl;
+    cout << << endl;
     
     for (size_t i = 0; i < db.slotsTable.size(); i++) {
         const auto &slot = db.slotsTable[i];
@@ -98,7 +89,7 @@ void displayAvailableSlots(const ParkingDatabase &db) {
     }
     
     cout << "\n\n>> Total Available Parking Slots Left: " << availableCount << " / " << db.slotsTable.size() << endl;
-    cout << "==========================================\n" << endl;
+    cout << "\n" << endl;
 }
 
 /**
@@ -154,14 +145,14 @@ void processVehicleExit(ParkingDatabase &db, string plate, int simulatedDuration
 
             double fee = calculateFee(db, durationMins);
             
-            cout << "\n==========================================" << endl;
+            cout << "<< endl;
             cout << "       OUTBOUND BILLING INVOICE           " << endl;
-            cout << "==========================================" << endl;
+            cout << << endl;
             cout << " Vehicle Plate   : " << plate << endl;
             cout << " Assigned Slot   : " << session.assignedSlotId << endl;
             cout << " Parking Duration: " << durationMins << " minutes" << endl;
             cout << " Total Bill Due  : Kshs. " << fee << endl;
-            cout << "------------------------------------------" << endl;
+            cout << << endl;
 
             // Handle client step logic: Barrier opens automatically ON payment
             session.amountPaid = fee;
@@ -176,8 +167,8 @@ void processVehicleExit(ParkingDatabase &db, string plate, int simulatedDuration
                 }
             }
 
-            cout << ">>> ACTION: [BARRIER OPENED] Safe travels from Multimedia University!" << endl;
-            cout << "==========================================\n" << endl;
+            cout << ">>> ACTION: [BARRIER OPENED] Safe travels  from Multimedia University!" << endl;
+            cout << << endl;
             return;
         }
     }
