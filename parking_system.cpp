@@ -7,23 +7,6 @@
 
 using namespace std; 
 
-/*
-    MODERN PARKING SYSTEM
-    Data Structures and Algorithms - Task One
-
-    Modules:
-    1. Display parking slot availability
-    2. Record vehicle arrival
-    3. Assign an available parking slot
-    4. Calculate parking duration
-    5. Calculate parking fees
-    6. Process vehicle exit and payment
-    7. Open the exit barrier after successful payment
-
-    Data structures:
-    - vector: stores parking slots and active vehicles
-    - struct: groups related vehicle and slot information
-*/
 
 // This structure represents ONE parking slot in the parking area.
 struct ParkingSlot {
@@ -61,9 +44,9 @@ public:
     // Display all parking slots and their current status.
     void displayParkingSlots() const {
         // Loop through every slot and display its current status.
-        cout << "\n=========================================\n";
-        cout << "       PARKING SLOT AVAILABILITY\n";
-        cout << "=========================================\n";
+        cout << "\n";
+        cout << "PARKING SLOT AVAILABILITY\n";
+        cout << "\n";
 
         for (const auto& slot : parkingSlots) {
             cout << "Slot " << setw(2) << slot.slotNumber << " : ";
