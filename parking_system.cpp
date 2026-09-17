@@ -8,14 +8,14 @@
 using namespace std; 
 
 
-// This structure represents ONE parking slot in the parking area.
+// This structure represents one parking slot in the parking area.
 struct ParkingSlot {
     int slotNumber;  // Unique number assigned to the parking slot.
     bool occupied;
     string vehicleRegistration;
 };
 
-// This structure stores information about ONE vehicle currently parked.
+// This structure stores information about the vehicle that is currently parked.
 struct Vehicle {
     string registrationNumber;  // Vehicle registration/number plate.
 
@@ -26,7 +26,7 @@ struct Vehicle {
 // ParkingSystem contains all the operations required to manage the parking area.
 class ParkingSystem {
 private:
-    // Vector is used because the number of active records can change dynamically.
+    // Vector is used because the number of active records can change automatically.
     vector<ParkingSlot> parkingSlots;
 
     // Stores vehicles that are currently inside the parking area.
@@ -120,7 +120,7 @@ public:
         cout << "Please proceed to your assigned parking slot.\n";
     }
 
-    // Calculate the fee using the rates in the assignment.
+    // Calculate the fee using the following rates.
     double calculateFee(long long minutes) const {
         if (minutes <= 30) {
             return 0.00;
@@ -269,7 +269,7 @@ int main() {
         cout << "Enter your choice: ";
         cin >> choice;
 
-        // switch selects the module requested by the user.
+        // switch selects the space requested by the user.
         switch (choice) {
             case 1:
                 parking.displayParkingSlots();
