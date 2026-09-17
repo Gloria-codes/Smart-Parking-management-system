@@ -10,7 +10,7 @@ vector<Vehicle> parkedVehicles;
 
 Vectors store the parking slots and vehicles currently in the parking area.
 
-### Why we use vector?
+### Importance of vectors
 
 - It supports dynamic storage.
 - Vehicles can be added when they arrive.
